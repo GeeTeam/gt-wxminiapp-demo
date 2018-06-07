@@ -8,7 +8,7 @@
  "plugins": {
     "myPlugin": {
       "version": "1.0.0",
-      "provider": "wxxxxxxxxxxxxxxxxx"
+      "provider": "wxefa63d84fe9f64a2"
     }
   }
 ```
