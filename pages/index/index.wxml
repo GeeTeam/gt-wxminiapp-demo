@@ -1,0 +1,10 @@
+
+<view class='app-container'>
+<view class='header'>
+      极验微信小程序插件demo
+</view>
+<view class='list'>
+  <button bindtap='toSlide'>slide-滑动模式</button>
+  <button bindtap='toClick'>click-大图模式</button>
+</view>
+</view>

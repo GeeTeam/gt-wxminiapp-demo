@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "captcha": "plugin://myPlugin/captcha"
+  }
+}
