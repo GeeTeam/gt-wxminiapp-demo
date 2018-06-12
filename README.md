@@ -24,18 +24,18 @@
 
 4. 页面wxml中插入captcha
 ```
-<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}} offline="{{offline}}"
+<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}"
  />
  ``` 
 5. onLoad时期在页面初始化插件，this.setData中为必传参数
  ```
   onLoad: function() {
         wx.request({
-          url: "API1接口（详见服务端部署）",
+          url: "API1接口（详见服务端部署）"+new Date().getTime(), //加时间戳防止缓存
           type: "get",
           dataType: "json",
           success: function (data) {
-         that.setData({ loadCaptcha:true,gt: res.data.gt, challenge: res.data.challenge, offline: !res.data.success})
+            that.setData({ loadCaptcha:true,gt: res.data.gt, challenge: res.data.challenge, offline: !res.data.success })
           }
       })
   }
