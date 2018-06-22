@@ -56,7 +56,7 @@ captchaSuccess:function(result){
 btnSubmit: function(){
     var that = this;
     var data = that.data.result;
-    if(typeof data !== 'object'){
+    if(typeof data !== 'object' && !data.geetest_challenge){
       console.log("请先完成验证！")
       return 
     }
@@ -86,7 +86,9 @@ btnSubmit: function(){
   * onSuccess 监听验证成功事件，参数为验证结果（用于二次验证）
   * onError 监听验证出错事件
   * onClose 插件关闭时
+  * toReset 用户主动调用，对二次验证的情况去重置验证码
   
-9. bug&tips
+9. Tips&Bug
+  * toReset 由于小程序的限制，实际无法直接去调用插件内部组件的方法，这里是hack的方式，通过改变组件的公有属性(properties)，触发observer调用内部方法
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
   * 安卓下滑动模式进行滑动时可能会有卡顿
