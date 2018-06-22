@@ -1,4 +1,3 @@
-var plug = requirePlugin('myPlugin')
 Page({
   data: {
       changeStatus:'',
@@ -11,7 +10,7 @@ Page({
       url: 'https://geetest.com/demo/gt/register-click?t='+ new Date().getTime(),
       method: 'GET',
       dataType: 'json',
-      success: function (res) {   
+      success: function (res) {
         that.setData({ loadCaptcha:true,gt: res.data.gt, challenge: res.data.challenge, offline: !res.data.success,product:'popup' })
       },
       fail: function () {
@@ -20,14 +19,14 @@ Page({
     })
   },
   onReady: function(){
-   
+
   },
   btnSubmit: function(){
     var that = this;
     var data = that.data.result;
-    if(typeof data !== 'object'){
+      if (!data || (data && !data.geetest_challenge)){
       console.log("请先完成验证！")
-      return 
+      return
     }
     wx.request({
       url: 'https://geetest.com/demo/gt/validate-click?t=' + new Date().getTime(),
@@ -62,5 +61,10 @@ Page({
   },
   captchaError: function () {
     console.log("captcha-Error!");
+  },
+  resetCaptcha: function(){
+    this.setData({
+      toReset: true // 属性默认为false，触发后会自动还原为false
+    })
   }
 })
