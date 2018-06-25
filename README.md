@@ -27,21 +27,28 @@
 <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}"
  />
  ``` 
-5. onLoad时期在页面初始化插件，this.setData中为必传参数
+5. onLoad时期在页面初始化插件，this.setData中的参数为必传参数
  ```
   onLoad: function() {
-        wx.request({
-          url: "API1接口（详见服务端部署）"+new Date().getTime(), //加时间戳防止缓存
-          type: "get",
-          dataType: "json",
-          success: function (data) {
-            that.setData({ loadCaptcha:true,gt: res.data.gt, challenge: res.data.challenge, offline: !res.data.success })
-          }
-      })
+    this.captchaRegister()
   }
+  captchaRegister: function () {
+    var that = this
+    wx.request({
+    url: 'API1接口（详见服务端部署）',
+    method: 'GET',
+    dataType: 'json',
+    success: function (res) {
+    that.setData({ loadCaptcha: true, gt: res.data.gt, challenge: res.data.challenge, offline: !res.data.success })
+     },
+    fail: function () {
+       console.log('error')
+        }
+      })
+    },
  ```
 
-6. 使用极验提供的onSuccess获取验证结果，准备二次验证，这里只是将结果保存在result中，可以自行决定是否在此直接调用二次验证
+6. 在onSuccess获取验证结果，准备二次验证（这里只是将结果保存在result中，二次验证时机自行决定)
 ```
 captchaSuccess:function(result){
   console.log("captcha-Success!");
@@ -51,17 +58,20 @@ captchaSuccess:function(result){
   },
 ```
 
-7. 提交二次验证，二次验证时机用户可自行决定，前提是已经拿到了一次验证结果
+7. 提交二次验证，上传一次验证结果
 ```
 btnSubmit: function(){
-    var that = this;
-    var data = that.data.result;
-    if(typeof data !== 'object' && !data.geetest_challenge){
-      console.log("请先完成验证！")
-      return 
-    }
-    wx.request({
-      url: "API2接口（详见服务端部署）",
+   this.captchaValidate()
+  },
+captchaValidate: function () {
+   var that = this
+   var data = that.data.result
+   if (!data || (data && !data.geetest_challenge)) {
+       console.log('请先完成验证！')
+       return
+      }
+   wx.request({
+      url:'API2接口（详见服务端部署）',
       method: 'POST',
       dataType: 'json',
       data: {
@@ -78,17 +88,50 @@ btnSubmit: function(){
         console.log('error')
       }
     })
-  },
+   },  
+  
 ```
 
 8. 提供的api接口  
   * onReady 监听验证按钮的 DOM 生成完毕事件，用户可点击
   * onSuccess 监听验证成功事件，参数为验证结果（用于二次验证）
+```
+      captchaSuccess:function(result){
+        console.log('captcha-Success!')
+        this.setData({
+            result: result.detail
+        })
+    },
+```
   * onError 监听验证出错事件
+```
+      captchaError: function (e) {
+        console.log('captcha-Error!',e.detail)
+        // 这里对challenge9分钟过期的机制返回做一个监控，如果服务端返回code:21,tips:not proof，则重新调用api1重置
+        if(e.detail.code === 21){
+          var that = this
+          // 需要先将插件销毁
+          that.setData({ loadCaptcha: false });
+          // 重新调用api1
+          that.captchaRegister()
+        }
+    }
+```
   * onClose 插件关闭时
   * toReset 用户主动调用，对二次验证的情况去重置验证码
+```
+       // 调用toReset接口需要在模版中多加一个属性
+       <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" bindonSuccess="captchaSuccess" bindonReady="captchaReady" bindonClose="captchaClose" bindonError="captchaError" toReset = "{{toReset}}" 
+       // 方法调用
+           btnReset:function(){
+             this.setData({
+               toReset: true
+             })
+         }
+```
   
 9. Tips&Bug
   * toReset 由于小程序的限制，实际无法直接去调用插件内部组件的方法，这里是hack的方式，通过改变组件的公有属性(properties)，触发observer调用内部方法
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
+  * 为了防止challenge9分钟过期无法reset，需要在error中对code：21，tips：not proof做一个监控，以便重置插件
   * 安卓下滑动模式进行滑动时可能会有卡顿
