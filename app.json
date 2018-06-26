@@ -12,7 +12,7 @@
   },
   "plugins": {
     "myPlugin": {
-      "version": "1.0.3",
+      "version": "1.0.4",
       "provider": "wxefa63d84fe9f64a2"
     }
   }
