@@ -135,3 +135,22 @@ captchaValidate: function () {
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
   * 为了防止challenge9分钟过期无法reset，需要在error中对code：21，tips：not proof做一个监控，以便重置插件
   * 安卓下滑动模式进行滑动时可能会有卡顿
+
+
+10. 提供自定义样式
+  * 在调用的组件上传入styleConfig 
+  * styleConfig 中可选参数 color 只能传入完整6位的HEX，按钮上的背景色为传入的色值透明度的60%；
+  * styleConfig 中可选参数 btnWidth 传入合法的css长度，需要带单位。
+
+  ``` 
+  // wxml
+  <captcha styleConfig="{{styleConfig}}"/>
+
+  // js
+  data:{
+    styleConfig: {
+      color: '#00aa90',  // 必须是完整的6位
+      btnWidth: '180px'
+    }
+  }
+  ```

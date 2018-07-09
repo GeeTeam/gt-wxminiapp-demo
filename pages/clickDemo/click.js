@@ -2,7 +2,11 @@
 Page({
     data: {
         changeStatus:'',
-        result: {}
+        result: {},
+        styleConfig: {
+            color: '#00aa90',
+            btnWidth: '180px'
+        }
     },
     onLoad: function() {
         this.captchaRegister()

@@ -15,7 +15,7 @@
  <label for='captcha'>完成验证:</label>
   <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}"
  bindonSuccess="captchaSuccess" bindonReady="captchaReady" bindonClose="captchaClose" bindonError="captchaError"
-  />
+  styleConfig="{{styleConfig}}" />
 </view>
 <button class='btn' id="btnSubmit" bindtap='btnSubmit'>提交</button>
 </view>
