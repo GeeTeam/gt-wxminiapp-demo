@@ -7,7 +7,7 @@
 ```
  "plugins": {
     "myPlugin": {
-      "version": "1.0.0",
+      "version": "1.0.9",
       "provider": "wxefa63d84fe9f64a2"
     }
   }
