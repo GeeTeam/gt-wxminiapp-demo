@@ -118,6 +118,18 @@ btnSubmit: function(){
 	    }
   }
   ```
+### 多语言国际化支持
+ 使用方式为在组件传参，不传默认为中文
+ ```
+   // wxml
+  <captcha lang="zh-cn"/>	
+ ```
+ * zh-cn默认  中文
+ * zh-tw   繁体中文
+ * en 英文
+ * ja 日文
+ * id 印尼
+  
 #### Tips&Bug
   * toReset 由于小程序的限制，实际无法直接去调用插件内部组件的方法，这里是hack的方式，通过改变组件的公有属性(properties)，触发observer调用内部方法
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
