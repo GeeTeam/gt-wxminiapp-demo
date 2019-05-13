@@ -9,7 +9,7 @@
 {
  "plugins": {
     "myPlugin": {
-      "version": "1.1.1", 
+      "version": "1.1.5", 
       "provider": "wxxxxxxxxxxxxxxxxx"
     }
   }
