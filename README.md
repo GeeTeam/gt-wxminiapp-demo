@@ -27,7 +27,7 @@
 
 4. 页面wxml中插入captcha
 ```
-<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}offline="{{offline}}" product="{{product}}" changeStatus="{{changeStatus}}"
+<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" product="{{product}}" changeStatus="{{changeStatus}}"
  />
 ```
 
