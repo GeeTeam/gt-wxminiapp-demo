@@ -114,7 +114,7 @@ btnSubmit: function(){
   data:{
     styleConfig: {
       color: '#00aa90',  // 必须是完整的6位
-      btnWidth: '180px'
+      btnWidth: '210px'  // minwidth: 210px, maxwidth:320px
 	    }
   }
   ```
