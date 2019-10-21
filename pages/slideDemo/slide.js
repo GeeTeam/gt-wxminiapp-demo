@@ -20,7 +20,7 @@ Page({
     captchaRegister: function () {
         var that = this
         wx.request({
-            url: 'https://geetest.com/demo/gt/register-slide?t=' + new Date().getTime(),
+            url: 'https://www.geetest.com/demo/gt/register-slide?t=' + new Date().getTime(),
             method: 'GET',
             dataType: 'json',
             success: function (res) {
@@ -39,7 +39,7 @@ Page({
             return
         }
         wx.request({
-            url: 'https://geetest.com/demo/gt/validate-slide?t=' + new Date().getTime(),
+            url: 'https://www.geetest.com/demo/gt/validate-slide?t=' + new Date().getTime(),
             method: 'POST',
             dataType: 'json',
             data: {
