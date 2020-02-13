@@ -1,20 +1,21 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/clickDemo/click",
-    "pages/slideDemo/slide"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "plugins": {
-    "myPlugin": {
-      "version": "1.1.7",
-      "provider": "wxefa63d84fe9f64a2"
-    }
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/clickDemo/click",
+        "pages/slideDemo/slide",
+        "pages/bindDemo/bindDemo"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "plugins": {
+        "myPlugin": {
+            "version": "1.2.0",
+            "provider": "wxefa63d84fe9f64a2"
+        }
+    },
+    "sitemapLocation": "sitemap.json"
 }

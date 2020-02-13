@@ -6,5 +6,6 @@
 <view class='list'>
   <button bindtap='toSlide'>slide-滑动模式</button>
   <button bindtap='toClick'>click-大图模式</button>
+  <button bindtap='toBind'>bind模式</button>
 </view>
 </view>

@@ -18,7 +18,7 @@ Page({
   },
   toBind: function () {
     wx.navigateTo({
-      url: '../bindDemo/bind',
+      url: '../bindDemo/bindDemo',
     })
   }
 })

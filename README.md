@@ -90,7 +90,13 @@ btnSubmit: function(){
   * onSuccess 监听验证成功事件，参数为验证结果（用于二次验证）
   * onError 监听验证出错事件
   * onClose 插件关闭时
+  * lang 多语言国际化，支持的语言为示例提供的几种
+  * styleConfig 自定义组件样式
+  * product 定义产品形式，默认为popup，可选bind。支持版本1.2.0及以上
   * toReset 用户主动调用，对二次验证的情况去重置验证码
+  * verify 适用于bind模式，唤起验证码
+
+### toReset
 ```
 // 调用toReset接口需要在模版中多加一个属性
 <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" bindonSuccess="captchaSuccess" bindonReady="captchaReady" bindonClose="captchaClose" bindonError="captchaError" toReset = "{{toReset}}" 
@@ -130,6 +136,28 @@ btnSubmit: function(){
  * ja 日文
  * id 印尼
   
+### bind模式使用
+首先组件中传参,核心为bind、verify，其它参数此处省略，具体细节可参考bind模式demo
+ ```
+   // wxml
+  <captcha product="bind" verify="{{verify}}"/>	
+ ```
+然后在需要时调用toVerify方法
+ ```
+    btnSubmit: function () {
+        // 进行业务逻辑处理
+        console.log("用户密码效验完毕，打开验证码");
+
+        // 唤起验证码
+        this.toVerify();
+    },
+    toVerify: function () {
+        this.setData({
+            verify: true
+        })
+    },
+ ```
+
 #### Tips&Bug
   * toReset 由于小程序的限制，实际无法直接去调用插件内部组件的方法，这里是hack的方式，通过改变组件的公有属性(properties)，触发observer调用内部方法
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
@@ -140,10 +168,11 @@ btnSubmit: function(){
 
 | 问题 | 参考解答| 
 | :------ | :----- |
-| 小程序插件支持web的无按钮bind模式吗？| 不支持，由于微信小程序插件对于安全方面的限制，致使外部无法调用插件内方法。|
+| 小程序插件支持web的无按钮bind模式吗？| ~~不支持，由于微信小程序插件对于安全方面的限制，致使外部无法调用插件内方法。~~ 支持，最新版本1.2.0已经提供小程序支持|
 | 大图模式支持哪几种验证形式？如何使用？ | click、icon、phrase、space、nine。极验后台申请相应id即可|
 | 插件放置时间过长或者出错了怎么办？ |  在onError做监听，reset验证插件 |
 | 服务端接口如何部署与使用？ | 参考pc端的部署方式，详细见官网文档https://docs.geetest.com/install/deploy/server/csharp|
+
 
 
 
