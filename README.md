@@ -146,7 +146,7 @@ btnSubmit: function(){
  ```
     btnSubmit: function () {
         // 进行业务逻辑处理
-        console.log("用户密码效验完毕，打开验证码");
+        console.log("用户名效验完毕，打开验证码");
 
         // 唤起验证码
         this.toVerify();
@@ -168,7 +168,7 @@ btnSubmit: function(){
 
 | 问题 | 参考解答| 
 | :------ | :----- |
-| 小程序插件支持web的无按钮bind模式吗？| ~~不支持，由于微信小程序插件对于安全方面的限制，致使外部无法调用插件内方法。~~ 支持，最新版本1.2.0已经提供小程序支持|
+| 小程序插件支持web的无按钮bind模式吗？| ~~不支持，由于微信小程序插件对于安全方面的限制，致使外部无法调用插件内方法。~~ 支持，最新版本1.2.0已经提供支持|
 | 大图模式支持哪几种验证形式？如何使用？ | click、icon、phrase、space、nine。极验后台申请相应id即可|
 | 插件放置时间过长或者出错了怎么办？ |  在onError做监听，reset验证插件 |
 | 服务端接口如何部署与使用？ | 参考pc端的部署方式，详细见官网文档https://docs.geetest.com/install/deploy/server/csharp|
