@@ -152,6 +152,7 @@ btnSubmit: function(){
         this.toVerify();
     },
     toVerify: function () {
+   	// 如果采用现代框架，可能会因为diff导致设置失效，可以将true换成随机数 Date.now()
         this.setData({
             verify: true
         })
