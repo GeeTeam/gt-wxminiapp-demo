@@ -163,7 +163,7 @@ btnSubmit: function(){
   * toReset 由于小程序的限制，实际无法直接去调用插件内部组件的方法，这里是hack的方式，通过改变组件的公有属性(properties)，触发observer调用内部方法
   * captcha插件的父容器大小会影响插件的显示，请参照demo设置一个合适的大小
   * 为了防止challenge9分钟过期无法reset，需要在error中对code：21，tips：not proof做一个监控，以便重置插件
-  * 安卓下滑动模式进行滑动时可能会有卡顿
+
 
 #### 帮助
 
