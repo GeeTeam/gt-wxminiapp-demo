@@ -27,7 +27,7 @@
 
 4. 页面wxml中插入captcha
 ```
-<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" product="{{product}}" changeStatus="{{changeStatus}}"
+<captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" product="{{product}}" 
  />
 ```
 
@@ -120,7 +120,7 @@ btnSubmit: function(){
   data:{
     styleConfig: {
       color: '#00aa90',  // 必须是完整的6位
-      btnWidth: '210px'  // minwidth: 210px, maxwidth:320px
+      btnWidth: '260px'  // minwidth: 210px, maxwidth:320px
 	    }
   }
   ```

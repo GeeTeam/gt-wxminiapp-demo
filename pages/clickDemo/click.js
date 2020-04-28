@@ -5,7 +5,7 @@ Page({
         result: {},
         styleConfig: {
             color: '#00aa90',
-            btnWidth: '180px'
+            btnWidth: '260px'
         }
     },
     onLoad: function() {
