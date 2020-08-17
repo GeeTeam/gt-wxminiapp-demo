@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navigator": "../../components/navigator/navigator",
+    "swp": "../../components/swp/swp",
+    "captcha": "plugin://myPlugin/captcha",
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+}
+}

@@ -1,0 +1,7 @@
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+page {
+    width: 100%;
+    height: 100%;
+}
+
+

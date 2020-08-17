@@ -1,0 +1,6 @@
+<view class="container">
+    <view class="main" style="margin-top: {{navH}}px">
+        <image src="/images/back.png" bindtap="back" class="img"></image>
+    <text class="text">{{title}}</text>
+    </view>
+</view>  

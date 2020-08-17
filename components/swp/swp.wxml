@@ -1,0 +1,13 @@
+
+    <scroll-view class="scroller" scroll-x scroll-with-animation="ease-in-out" bindscroll="scroll" bindscrolltolower="scrollRight" bindscrolltoupper="scrollLeft">
+
+        <view class="container">
+             <view wx:for="{{captchalist}}" class="list {{currentCaptcha === item.id ? 'active' : '' }}">
+                  <view class="text" bindtap="switchCaptcha" data-id="{{item.id}}">{{item.name}}</view>
+            </view>
+        </view>
+
+    </scroll-view>
+
+<view class="blur blur_left" wx:if="{{showLBlur}}"></view>
+<view class="blur blur_right" wx:if="{{showRBlur}}"></view>

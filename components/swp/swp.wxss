@@ -1,0 +1,63 @@
+/* components/swiper/swiper.wxss */
+.scroller {
+    width: 100%;
+    height: 40px;
+    white-space: nowrap;
+}
+
+
+.blur {
+    position: absolute;
+    top: 0px;
+    width: 44px;
+    height: 36px;
+
+}
+
+.blur_left {
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    left: 0px;
+}
+
+.blur_right {
+    left: 65%;
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.container {
+    width: 125%;
+    height: 40px;
+    margin-left: 17px;
+}
+
+.container .list {
+    width: 112px;
+    height: 36px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 12px;
+    background: #DADFEC;
+}
+
+.container .text {
+    font-size: 14px;
+    color: #3B426B;
+    line-height: 36px;
+    width: 100%;
+}
+
+
+.container .active {
+    background: #376FFF;
+}
+
+.container .active .text {
+    color: #DADFEC;
+}
+
+
+
+
+

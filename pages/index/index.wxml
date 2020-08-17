@@ -1,11 +1,29 @@
+<view class="container">
+    <view class="navigator" style="position:absolute;top: {{navH}}px;">
+        <image src="/images/navigator.png"></image>
+    </view>
+    <view class="c_main">
+        <view class="title">
+              <image src="/images/title.png"></image>
+              <view class="intro">{{lang.introduce}}</view>
+        </view>
+        <view class="cutline">
+            <view class="line">
+                <view class="left"></view>
+                <view class="right"></view>
+            </view>
+            <view class="line_tips">{{lang.tips}}</view>
+        </view>
+        <view class="items">
+            <view wx:for="{{captchalist}}" wx:key="id" bindtap="navigatorTo" data-path="{{item.path}}"  data-id="{{item.id}}"> 
+                <image src="{{item.imgsrc}}"></image>
+                <text data-path="{{item.path}}" data-id="{{item.id}}">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
 
-<view class='app-container'>
-<view class='header'>
-      极验微信小程序插件demo
+    <view class="footer">
+        {{lang.copyright}}
+    </view>
 </view>
-<view class='list'>
-  <button bindtap='toSlide'>slide-滑动模式</button>
-  <button bindtap='toClick'>click-大图模式</button>
-  <button bindtap='toBind'>bind模式</button>
-</view>
-</view>
+<image src="/images/bg.png" class="bg"></image>

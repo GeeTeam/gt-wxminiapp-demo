@@ -1,0 +1,40 @@
+<navigator></navigator>
+<view class="container">
+    <swp class="swp" currentCaptcha="{{currentCaptcha}}" bindOnchange="switchCaptcha"></swp>
+    <view class="main">
+        <view class="user"> 
+            <view>
+               <image src="/images/address.png"></image> 
+            </view>
+            <view>
+              <input class="weui-input"  placeholder="hello@geetest.com" placeholder-class="place_user"></input>
+            </view>
+          
+        </view>
+        <view class="pass">
+            <view>
+                 <image src="/images/pass.png"></image>
+            </view>
+            <view>
+                 <input type='pass' password class="weui-input"  placeholder="******" placeholder-class="place_pass" ></input>
+            </view>
+
+        </view>
+        <view id="captchabox" >
+         <mp-loading type="dot-white" ext-class="demo1" show="{{loading}}"></mp-loading>
+            <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" bindonSuccess="captchaSuccess" bindonReady="captchaReady" bindonClose="captchaClose"  bindonError="captchaError" toReset="{{toReset}}"
+            styleConfig="{{styleConfig}}" />
+        </view>
+        <view class="submit" bindtap='btnSubmit'>{{lang.login}}</view>
+        <view class="tips">
+            <view class="line"></view>
+            <image src="{{captchalist[currentCaptcha].src}}"></image>
+            <view>{{captchalist[currentCaptcha].tips}}</view>
+        </view>
+        <view class="footer" bindtap="navigatoweb">
+            <view class="more">{{lang.more}}</view>
+            <image src="/images/logo.png"></image>
+        </view>
+    </view>
+</view>    
+

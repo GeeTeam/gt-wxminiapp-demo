@@ -1,15 +1,17 @@
 {
     "pages": [
+        "pages/ai/ai",
         "pages/index/index",
         "pages/clickDemo/click",
         "pages/slideDemo/slide",
-        "pages/bindDemo/bindDemo"
+        "pages/bindDemo/bindDemo",
+        "pages/slide/slide",
+        "pages/click/click",
+        "pages/web/web"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
+        "navigationStyle": "custom"
     },
     "plugins": {
         "myPlugin": {

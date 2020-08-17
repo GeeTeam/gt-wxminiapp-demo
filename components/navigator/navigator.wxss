@@ -1,0 +1,22 @@
+.main {
+    position: relative;
+    text-align: center;
+}
+
+.main .img {
+    width: 9px;
+    height: 16px;
+    position: absolute;
+    left: 4.53%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.main .text {
+    opacity: 0.9;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+}

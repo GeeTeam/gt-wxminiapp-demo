@@ -1,0 +1,23 @@
+{
+  "name": "gt-wxminiapp-demo",
+  "version": "1.0.0",
+  "description": "--- #### 搜索申请： 1. 首先在小程序管理后台的\"设置-第三方服务-插件管理\"中添加插件，通过AppID查找所需的插件，等待极验通过申请。",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeeTeam/gt-wxminiapp-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeeTeam/gt-wxminiapp-demo/issues"
+  },
+  "homepage": "https://github.com/GeeTeam/gt-wxminiapp-demo#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.4"
+  }
+}
