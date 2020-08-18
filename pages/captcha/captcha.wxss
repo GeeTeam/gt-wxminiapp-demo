@@ -14,13 +14,17 @@ overflow: hidden;
 
 .swp {
     position: absolute;
-    top: 12%;
+    top: 14%;
+    width: 560px;
 }
 
 .container .main {
 width: 77.6%;
 height: 72%;
 padding: 28% 11.2% 5%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
 }
 
 .main .user, .main .pass {
@@ -31,7 +35,7 @@ padding: 28% 11.2% 5%;
 .main .user view:nth-child(1), .main .pass view:nth-child(1) {
     display: inline-block;
     width: 13.79%;
-    height: 100%;
+    height: 44px;
     background: #F6F9FC;
     border: 1px solid #DCE1E6;
 box-sizing: border-box;
@@ -52,7 +56,7 @@ align-items: center;
    box-sizing: border-box;
    border-top-right-radius: 3px;
    border-bottom-right-radius:3px ;
-   height: 100%;
+   height: 44px;
    width: 100%;
    color: #00205940;
    font-size: 14px;
@@ -86,20 +90,16 @@ text-align: center;
     font-size: 13px;
 }
 
-.main>view {
+.wrap>view {
     margin-bottom: 6.18%;
 }
 
-.main .tips {
-    margin: 16% 0 14%;
-
-}
 .tips .line{
     width: 110%;
     opacity: 0.2;
-border: 1px solid #000000;
-transform: translateX(-5%);
-margin-bottom: 10%;
+    border: 0.5px solid #000000;
+    transform: translateX(-5%);
+    margin-bottom: 10%;
 }
 
 .tips image {
@@ -117,6 +117,8 @@ margin-bottom: 10%;
 .footer {
     display: flex;
     justify-content: space-between;
+    width: 110%;
+    margin-left: -5%;
 }
 .footer .more {
     color: #376FFF;
@@ -131,12 +133,108 @@ margin-bottom: 10%;
 .demo1 {
     width: 100%;
     height: 100%;
-    background: #D5DBEB;
-    border-radius: 3px;
+    background: #F0F2F6;
+    border-radius: 3px;  
 }
 
+.demo1 .loading, .demo1 .loading::after,.demo1 .loading::before{
+    animation: k 1.6s step-start infinite ; 
+    -webkit-animation:    k 1.6s step-start infinite;
+}
+
+@keyframes k{
+    0%,
+    to{
+        background-color: #C2CCDB;
+        opacity: 0.3;
+    }
+    30%{
+        background-color: #C2CCDB;
+        opacity: 0.5;
+    }
+    60%{
+        background-color: #C2CCDB;
+        opacity: 1;
+    }
+}
 
 #captchabox {
     width: 100%;
     height: 44px;
+}
+
+.showfocus {
+    position: relative;
+}
+
+.showfocus .up {
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    left: 50%;
+    border-radius: 4px;
+    z-index: 9999;
+    top: -30px;
+    animation: up ease-in-out 1s infinite;
+    transform: translateX(-50%);
+}
+.showfocus .down {
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    left: 50%;
+    z-index: 9999;
+    bottom: -74px;
+    animation: down ease-in-out 1s infinite;
+    transform: rotate(180deg) translateX(50%);
+}
+
+@keyframes up {
+    0%{
+        top: -30px; 
+    }
+    50% {
+        top: -50px
+    }
+    100% {
+        top: -30px; 
+    }
+}
+
+@keyframes down {
+    0%{
+        bottom: -74px; 
+    }
+    50% {
+        bottom: -94px;
+    }
+    100%{
+        bottom: -74px; 
+    }
+}
+
+.wx_modal {
+    width: 261px;
+    height: 104px;
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: showModal 1s ease-in-out;
+}
+
+.wx_modal image {
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes showModal {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

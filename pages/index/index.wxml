@@ -15,9 +15,9 @@
             <view class="line_tips">{{lang.tips}}</view>
         </view>
         <view class="items">
-            <view wx:for="{{captchalist}}" wx:key="id" bindtap="navigatorTo" data-path="{{item.path}}"  data-id="{{item.id}}"> 
+            <view wx:for="{{captchalist}}" wx:key="id"> 
                 <image src="{{item.imgsrc}}"></image>
-                <text data-path="{{item.path}}" data-id="{{item.id}}">{{item.name}}</text>
+                <view data-path="../captcha/captcha" bindtap="navigatorTo"  data-id="{{item.id}}" class="item-sel">{{item.name}}</view>
             </view>
         </view>
     </view>

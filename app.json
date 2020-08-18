@@ -1,12 +1,8 @@
 {
     "pages": [
-        "pages/ai/ai",
         "pages/index/index",
-        "pages/clickDemo/click",
-        "pages/slideDemo/slide",
+        "pages/captcha/captcha",
         "pages/bindDemo/bindDemo",
-        "pages/slide/slide",
-        "pages/click/click",
         "pages/web/web"
     ],
     "window": {

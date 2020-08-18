@@ -3,12 +3,15 @@
     width: 100%;
     height: 40px;
     white-space: nowrap;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
+
 .blur {
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: 14%;
     width: 44px;
     height: 36px;
 
@@ -17,18 +20,20 @@
 .blur_left {
     background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    left: 0px;
+    left: -3%;
+    width: 35px;
 }
 
 .blur_right {
-    left: 65%;
+    right: 0;
     background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .container {
-    width: 125%;
+    width: 148%;
     height: 40px;
     margin-left: 17px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container .list {

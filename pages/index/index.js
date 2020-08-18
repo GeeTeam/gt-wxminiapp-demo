@@ -15,25 +15,21 @@ Page({
     captchalist:[
       {
         id: 'ai',
-        path: '../ai/ai',
         name: '智能组合验证',
         imgsrc: '/images/icon1.png'
       },
       {
         id: 'slide',
-        path: '../slide/slide',
         name: '滑动拼图验证',
         imgsrc: '/images/icon2.png'
       },
       {
         id: 'click',
-        path: '../click/click',
         name: '文字点选验证',
         imgsrc: '/images/icon3.png'
       },
       {
         id: 'space',
-        path: '../space/space',
         name: '空间推理验证',
         imgsrc: '/images/icon4.png'
       }

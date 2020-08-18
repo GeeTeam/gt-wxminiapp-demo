@@ -2,7 +2,8 @@
 <view class="container">
     <swp class="swp" currentCaptcha="{{currentCaptcha}}" bindOnchange="switchCaptcha"></swp>
     <view class="main">
-        <view class="user"> 
+        <view class="wrap">
+                <view class="user"> 
             <view>
                <image src="/images/address.png"></image> 
             </view>
@@ -20,16 +21,22 @@
             </view>
 
         </view>
-        <view id="captchabox" >
+        <view id="captchabox">
+            <view class="showfocus" wx:if="{{showfocus}}">
+                <image class="up" src="/images/foucus.png"></image>
+                <image class="down" src="/images/foucus.png"></image>
+            </view>
          <mp-loading type="dot-white" ext-class="demo1" show="{{loading}}"></mp-loading>
             <captcha id="captcha" wx:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" bindonSuccess="captchaSuccess" bindonReady="captchaReady" bindonClose="captchaClose"  bindonError="captchaError" toReset="{{toReset}}"
             styleConfig="{{styleConfig}}" />
         </view>
-        <view class="submit" bindtap='btnSubmit'>{{lang.login}}</view>
+        <view class="submit">{{lang.login}}</view>
+        </view>
+
         <view class="tips">
             <view class="line"></view>
             <image src="{{captchalist[currentCaptcha].src}}"></image>
-            <view>{{captchalist[currentCaptcha].tips}}</view>
+            <view class="tips-detail">{{captchalist[currentCaptcha].tips}}</view>
         </view>
         <view class="footer" bindtap="navigatoweb">
             <view class="more">{{lang.more}}</view>
@@ -37,4 +44,6 @@
         </view>
     </view>
 </view>    
-
+<view class="wx_modal" wx:if="{{showModal}}">
+    <image src="/images/successtips.png"></image>
+</view>

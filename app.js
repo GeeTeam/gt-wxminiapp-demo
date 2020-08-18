@@ -8,6 +8,7 @@ App({
         success: res => {
           //导航高度
           this.globalData.navHeight = res.statusBarHeight+8;
+          this.globalData.windowWidth = res.windowWidth;
         }, fail(err) {
           console.log(err);
         }
@@ -35,6 +36,7 @@ App({
     
   },
   globalData: {
-    navHeight: 0
+    navHeight: 0,
+    windowWidth: 0
   }
 })

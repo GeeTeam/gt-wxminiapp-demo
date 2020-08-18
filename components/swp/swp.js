@@ -1,10 +1,39 @@
 // components/swiper/swiper.js
+const App = getApp();
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
       currentCaptcha: String
+    },
+    observers:{
+      'currentCaptcha': function(cur){
+
+        var windowWidth = this.data.windowWidth;
+        var selector = this.createSelectorQuery();
+        
+        selector.select("."+cur).boundingClientRect((rect)=>{
+          
+          var left = rect.left;
+          var halfwidth = rect.width/2;
+          var center =  windowWidth/2;
+
+          var distance = left - center + halfwidth;
+
+          let scrollLeft = this.data.scrollLeft;
+
+          scrollLeft = scrollLeft + distance;
+          
+          if(scrollLeft<0){
+             scrollLeft =0;
+          }
+          this.setData({
+           scrollLeft: scrollLeft
+         })
+      
+       }).exec();
+      }
     },
 
     /**
@@ -37,32 +66,36 @@ Component({
             imgsrc: '/images/icon4.png'
           }
           ],
-          showLBlur: false,
-          showRBlur: false
+          showLBlur: true,
+          showRBlur: true,
+          scrollLeft: 0
     },
 
     /**
      * 组件的方法列表
      */
+    created(){
+     
+      this.setData({
+        windowWidth: App.globalData.windowWidth
+      })
+    },
     methods: {
       scroll(e){
-        console.log(e.detail.scrollLeft);
+
       },
       scrollLeft(e){
-        console.log("left");
       },
       scrollRight(e){
-        console.log("right");
       },
       switchCaptcha(e){
         var type = e.currentTarget.dataset.id;
-        this.setData({
+      
+        // 此处事件触发父组件元素更新，同时父组件传递给子组件的currentCaptcha也会刷新，这里不需要手动再更新
+        this.triggerEvent("Onchange",{
           currentCaptcha: type
         });
 
-        this.triggerEvent("Onchange",{
-          currentCaptcha: type
-        })
       }
     }
 })

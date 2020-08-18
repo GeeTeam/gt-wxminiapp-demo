@@ -5,6 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+        showModal: false,
+        showfocus: true,
         currentCaptcha: 'ai',
         changeStatus:'',
         result: {},
@@ -69,8 +71,6 @@ Page({
     onLoad: function (options) {
         console.log(options);
 
-        // 等会取消
-        options.id ='ai';
         this.setData({
             currentCaptcha: options.id
         });
@@ -173,9 +173,7 @@ Page({
                 geetest_seccode: data.geetest_seccode
             },
             success: function (res) {
-                wx.showToast({
-                    title: res.data.status
-                })
+                
             },
             fail: function () {
                 console.log('error')
@@ -184,9 +182,22 @@ Page({
     },
     captchaSuccess:function(result){
         console.log('captcha-Success!')
-        this.setData({
-            result: result.detail
-        })
+        // 直接显示成功
+
+        setTimeout(()=>{
+            this.setData({
+                result: result.detail,
+                showfocus: false,
+                showModal: true
+            });
+        },1800)
+
+        setTimeout(()=>{
+            this.setData({
+                showModal: false
+            });
+        },4800)
+    
     },
     captchaReady:function(){
         console.log('captcha-Ready!')
@@ -196,6 +207,9 @@ Page({
     },
     captchaClose:function(){
         console.log('captcha-Close!')
+        this.setData({
+            showfocus: false
+        })
     },
     captchaError: function (e) {
         console.log('captcha-Error!', e.detail)
