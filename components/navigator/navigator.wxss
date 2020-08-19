@@ -13,6 +13,18 @@
     cursor: pointer;
 }
 
+.main .hotarea {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    background-color: transparent;
+    position: absolute;
+left: 0;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+z-index: 999;
+}
 
 .main .text {
     opacity: 0.9;

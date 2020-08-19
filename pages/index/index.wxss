@@ -9,6 +9,9 @@ page {
 
 .navigator {
   left: 5.3%;
+  height: 32px;
+  display: flex;
+  align-items: center;
 }
 .navigator image {
   width: 108px;
@@ -118,6 +121,7 @@ border-radius: 6px;
   margin-bottom: 5.76%;
   line-height: 60px;
   cursor: pointer;
+  -webkit-tap-highlight-color: initial;
 }
 
 .c_main .items view image{

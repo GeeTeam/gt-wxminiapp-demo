@@ -1,6 +1,7 @@
 <view class="container">
-    <view class="main" style="margin-top: {{navH}}px">
-        <image src="/images/back.png" bindtap="back" class="img"></image>
+    <view class="main" style="margin-top: {{navH}}px;">
+        <view class="hotarea"  bindtap="back"></view>
+        <image src="/images/back.png" class="img"></image>
     <text class="text">{{title}}</text>
     </view>
 </view>  

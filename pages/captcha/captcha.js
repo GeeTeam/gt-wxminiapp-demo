@@ -47,16 +47,16 @@ Page({
                 validate: 'https://www.geetest.com/demo/gt/validate-icon'
             },
             space: {
-                register: 'https://www.geetest.com/demo/gt/register-space',
-                validate: 'https://www.geetest.com/demo/gt/validate-space'
+                register: 'https://www.geetest.com/api/user/show/register-space',
+                validate: 'https://www.geetest.com/api/user/show/validate-space'
             },
             nine: {
                 register: 'https://www.geetest.com/demo/gt/register-click-s-e',
                 validate: 'https://www.geetest.com/demo/gt/validate-click-s-e'
             },
             ai: {
-                register: 'https://www.geetest.com/demo/gt/register-phrase',
-                validate: 'https://www.geetest.com/demo/gt/validate-phrase'
+                register: 'https://www.geetest.com/demo/gt/register-fullpage-official',
+                validate: 'https://www.geetest.com/demo/gt/validate-fullpage-official'
             },
             slide: {
                 register: 'https://www.geetest.com/demo/gt/register-slide',
@@ -69,11 +69,25 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
+        try {
+            var isfirst = wx.getStorageSync('first');
+            if(isfirst){
+                this.setData({
+                    showfocus: false
+                });
+            }else {
+                wx.setStorage({
+                    data: true,
+                    key: 'first',
+                  });
+            }
+        }catch{
 
+        }
         this.setData({
             currentCaptcha: options.id
         });
+    
         this.captchaRegister()
     },
 

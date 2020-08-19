@@ -2,7 +2,6 @@
     "pages": [
         "pages/index/index",
         "pages/captcha/captcha",
-        "pages/bindDemo/bindDemo",
         "pages/web/web"
     ],
     "window": {

@@ -40,7 +40,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(App.globalData.navHeight);
+
     this.setData({
           navH: App.globalData.navHeight
         })
@@ -97,7 +97,6 @@ Page({
   navigatorTo(e){
     let path = e.currentTarget.dataset.path;
     let id = e.currentTarget.dataset.id;
-    console.log(path+'?id='+id);
     if(path && id){
       wx.navigateTo({
         url: path+'?id='+id
