@@ -8,7 +8,7 @@ page {
   margin: 20px 0px;
 }
 
-.app-container {
+.container {
   width: 80%;
   position: absolute;
   left: 50%;
@@ -19,6 +19,26 @@ page {
   border-radius: 5px;
 }
 
-.list button {
-  margin-bottom:30px; 
+.input {
+  display: inline-block;
+  width: 250px;
+  margin-left:20px;
+}
+.input label {
+  font-size: 14px;
+}
+
+.input input {
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 0 10px;
+    width: 240px;
+    height: 40px;
+    font-size: 14px;
+}
+
+
+.btn {
+  width: 260px;
+  margin: 20px ;
 }

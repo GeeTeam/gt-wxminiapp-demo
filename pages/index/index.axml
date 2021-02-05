@@ -1,0 +1,11 @@
+
+<view class='container'>
+<view class='header'>
+      极验支付宝小程序插件demo
+</view>
+<view class='list'>
+  <button onTap='toSlide'>slide-滑动模式</button>
+  <button onTap='toClick'>click-大图模式</button>
+  <button onTap='toBind'>bind模式示例</button>
+</view>
+</view>

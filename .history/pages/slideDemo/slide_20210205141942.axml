@@ -1,0 +1,22 @@
+
+<view class='container'>
+<view class='header'>
+      极验支付宝小程序demo
+</view>
+<view class='input'>
+  <label for='username'>用户名:</label>
+  <input placeholder='用户名' id='username'></input>
+</view>
+<view class='input'>
+   <label for='password'>密码:</label>
+  <input placeholder='密码' id='password'></input>
+</view>
+<view id="captchabox" class='input'>
+ <label for='captcha'>完成验证:</label>
+  <captcha id="captcha" a:if="{{loadCaptcha}}" gt="{{gt}}" challenge="{{challenge}}" offline="{{offline}}" product="{{product}}"
+ onSuccess="captchaSuccess" onReady="captchaReady" onClose="captchaClose" onError="captchaError" lang='zh-cn'
+ styleConfig="{{styleConfig}}"
+  />
+</view>
+<button class='btn' id="btnSubmit" onTap='btnSubmit'>提交</button>
+</view>

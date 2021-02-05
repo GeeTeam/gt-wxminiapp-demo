@@ -1,19 +1,20 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/clickDemo/click",
-    "pages/slideDemo/slide"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  },
-  "plugins": {
-    "myPlugin": {
-      "version": "1.0.0",
-      "provider": "wxefa63d84fe9f64a2"
+    "pages": [
+        "pages/index/index",
+        "pages/clickDemo/click",
+        "pages/slideDemo/slide",
+        "pages/bindDemo/bindDemo"
+    ],
+    "plugins": {
+        "geetest": {
+            "version": "1.0.0",
+            "provider": "2021002124682563"
+        }
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "极验支付宝小程序插件demo",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#fff"
     }
-  }
 }
